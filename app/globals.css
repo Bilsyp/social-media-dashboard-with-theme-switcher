@@ -2,26 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    /* Dark */
+    --very_dark_blue_bg: rgb(30, 32, 42);
+    --very_dark_blue_top_bg_pattern: hsl(232, 19%, 15%);
+    --dark_desaturate_blue_card_bg: rgb(37, 42, 65);
+    --desaturated_blue_text: hsl(228, 34%, 66%);
+    --white_text: hsl(0, 0%, 100%);
+    /* Light */
+    --white_bg: hsl(0, 0%, 100%);
+    --very_pale_blue_top_bg_pattern: hsl(225, 100%, 98%);
+    --light_grayish_blue_card_bg: hsl(227, 47%, 96%);
+    --dark_grayish_blue_text: rgb(99, 104, 126);
+    --very_dark_blue_text: rgb(30, 32, 42);
+
+    --lime_green: rgb(29, 180, 137);
+    --bright_red: rgb(220, 65, 76);
+
+    --facebook: rgb(25, 143, 245);
+    --twitter: rgb(28, 160, 242);
+    --instagram: linear-gradient(rgb(253, 196, 104) to rgb(223, 73, 150));
+
+    --youtube: rgb(196, 3, 42);
+
+    /* root */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-white relative dark:bg-very_dark_blue_bg after:content-[''] after:absolute after:w-full after:h-[40%] after:top-0 after:left-0 after:bg-very_pale_blue_top_bg_pattern after:dark:bg-very_dark_blue_top_bg_pattern after:z-[-1];
+  }
+}
+@layer components {
+  .cardss {
+    @apply bg-light_grayish_blue_card_bg  dark:bg-very_dark_blue_top_bg_pattern relative overflow-clip cursor-pointer hover:bg-[#e1e3f0] duration-500 dark:hover:bg-[#333a56];
+  }
 }
