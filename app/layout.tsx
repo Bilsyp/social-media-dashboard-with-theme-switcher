@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import { Poppins, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
-export const poppins = Poppins({
-  variable: "--poppins",
-  subsets: ["latin"],
-  weight: ["200", "400", "700"],
-});
 export const inter = Inter({
   variable: "--inter",
   subsets: ["latin"],
