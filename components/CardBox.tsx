@@ -25,7 +25,7 @@ function CardBox({
   return (
     <div className="card-container text-center">
       <Card className="p-3 bg-light_grayish_blue_card_bg  dark:bg-very_dark_blue_top_bg_pattern relative overflow-clip cursor-pointer hover:bg-[#e1e3f0] duration-500 dark:hover:bg-[#333a56]">
-        <div>
+        <div className=" flex justify-center items-center gap-3">
           <Image
             priority
             src={`/images${icon}`}
