@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
-export const inter = Inter({
+const inter = Inter({
   variable: "--inter",
   subsets: ["latin"],
   weight: ["400", "700"],
