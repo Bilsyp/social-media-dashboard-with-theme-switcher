@@ -17,4 +17,4 @@
 ## Deploying project
 
 - [Vercel](https://vercel.com/)
-- [Demo](https://bilsyp-social-media-dashboard.vercel.app/)
+- [Demo](https://social-media-dashboard-with-theme-switcher-beige.vercel.app/)
